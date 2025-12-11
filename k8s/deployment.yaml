@@ -28,8 +28,8 @@ spec:
     app: node-js
   ports:
     - protocol: TCP
-      port: 8082
-      targetPort: 8082
+      port: 5000
+      targetPort: 5000
       nodePort: 30007
 
 
