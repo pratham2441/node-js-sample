@@ -17,6 +17,13 @@ spec:
           image: prathamesh24/node-js-sample:1.0
           ports:
             - containerPort: 5000
+          volumeMounts:
+            - name: node-js-storage
+              mountPath: /usr/src/app/data
+      volumes:
+        - name: node-js-storage
+          persistentVolumeClaim:
+            claimName: node-js-pvc
 ---
 apiVersion: v1
 kind: Service
@@ -31,5 +38,3 @@ spec:
       port: 5000
       targetPort: 5000
       nodePort: 30007
-
-
